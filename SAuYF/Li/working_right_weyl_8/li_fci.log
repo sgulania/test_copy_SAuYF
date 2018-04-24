@@ -1,0 +1,411 @@
+ Entering Gaussian System, Link 0=g09
+ Input=li_fci.g
+ Output=li_fci.log
+ Initial command:
+ /opt/gaussian/g09/l1.exe /scratch/jdw/Gau-55628.inp -scrdir=/scratch/jdw/
+ Entering Link 1 = /opt/gaussian/g09/l1.exe PID=     55629.
+  
+ Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009, Gaussian, Inc.
+                  All Rights Reserved.
+  
+ This is part of the Gaussian(R) 09 program.  It is based on
+ the Gaussian(R) 03 system (copyright 2003, Gaussian, Inc.),
+ the Gaussian(R) 98 system (copyright 1998, Gaussian, Inc.),
+ the Gaussian(R) 94 system (copyright 1995, Gaussian, Inc.),
+ the Gaussian 92(TM) system (copyright 1992, Gaussian, Inc.),
+ the Gaussian 90(TM) system (copyright 1990, Gaussian, Inc.),
+ the Gaussian 88(TM) system (copyright 1988, Gaussian, Inc.),
+ the Gaussian 86(TM) system (copyright 1986, Carnegie Mellon
+ University), and the Gaussian 82(TM) system (copyright 1983,
+ Carnegie Mellon University). Gaussian is a federally registered
+ trademark of Gaussian, Inc.
+  
+ This software contains proprietary and confidential information,
+ including trade secrets, belonging to Gaussian, Inc.
+  
+ This software is provided under written license and may be
+ used, copied, transmitted, or stored only in accord with that
+ written license.
+  
+ The following legend is applicable only to US Government
+ contracts under FAR:
+  
+                    RESTRICTED RIGHTS LEGEND
+  
+ Use, reproduction and disclosure by the US Government is
+ subject to restrictions as set forth in subparagraphs (a)
+ and (c) of the Commercial Computer Software - Restricted
+ Rights clause in FAR 52.227-19.
+  
+ Gaussian, Inc.
+ 340 Quinnipiac St., Bldg. 40, Wallingford CT 06492
+  
+  
+ ---------------------------------------------------------------
+ Warning -- This program may not be used in any manner that
+ competes with the business of Gaussian, Inc. or will provide
+ assistance to any competitor of Gaussian, Inc.  The licensee
+ of this program is prohibited from giving any competitor of
+ Gaussian, Inc. access to this program.  By using this program,
+ the user acknowledges that Gaussian, Inc. is engaged in the
+ business of creating and licensing software in the field of
+ computational chemistry and represents and warrants to the
+ licensee that it is not a competitor of Gaussian, Inc. and that
+ it will not use this program in any manner prohibited above.
+ ---------------------------------------------------------------
+  
+
+ Cite this work as:
+ Gaussian 09, Revision A.02,
+ M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria, 
+ M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone, B. Mennucci, 
+ G. A. Petersson, H. Nakatsuji, M. Caricato, X. Li, H. P. Hratchian, 
+ A. F. Izmaylov, J. Bloino, G. Zheng, J. L. Sonnenberg, M. Hada, 
+ M. Ehara, K. Toyota, R. Fukuda, J. Hasegawa, M. Ishida, T. Nakajima, 
+ Y. Honda, O. Kitao, H. Nakai, T. Vreven, J. A. Montgomery, Jr., 
+ J. E. Peralta, F. Ogliaro, M. Bearpark, J. J. Heyd, E. Brothers, 
+ K. N. Kudin, V. N. Staroverov, R. Kobayashi, J. Normand, 
+ K. Raghavachari, A. Rendell, J. C. Burant, S. S. Iyengar, J. Tomasi, 
+ M. Cossi, N. Rega, J. M. Millam, M. Klene, J. E. Knox, J. B. Cross, 
+ V. Bakken, C. Adamo, J. Jaramillo, R. Gomperts, R. E. Stratmann, 
+ O. Yazyev, A. J. Austin, R. Cammi, C. Pomelli, J. W. Ochterski, 
+ R. L. Martin, K. Morokuma, V. G. Zakrzewski, G. A. Voth, 
+ P. Salvador, J. J. Dannenberg, S. Dapprich, A. D. Daniels, 
+ O. Farkas, J. B. Foresman, J. V. Ortiz, J. Cioslowski, 
+ and D. J. Fox, Gaussian, Inc., Wallingford CT, 2009.
+ 
+ ******************************************
+ Gaussian 09:  AM64L-G09RevA.02 11-Jun-2009
+                19-Feb-2017 
+ ******************************************
+ %rwf=r.chk
+ %chk=c.chk
+ ------------------------------------------------
+ #P CASSCF(3,3,nroot=9)/GEN IOp(3/60=-1) POP=full
+ ------------------------------------------------
+ 1/38=1/1;
+ 2/12=2,17=6,18=5,40=1/2;
+ 3/5=7,16=1,25=1,32=1,60=-1,116=101/1,2,3;
+ 4/17=3,18=3/1,5;
+ 5/5=2,17=1000000,28=9,38=5/10;
+ 6/7=3,28=1/1;
+ 99/5=1,9=1/99;
+ Leave Link    1 at Sun Feb 19 17:47:04 2017, MaxMem=          0 cpu:       0.0
+ (Enter /opt/gaussian/g09/l101.exe)
+ -----------------
+ Li integral tests
+ -----------------
+ Symbolic Z-matrix:
+ Charge =  0 Multiplicity = 2
+ Li                    0.        0.        0. 
+ 
+ NAtoms=      1 NQM=      1 NQMF=      0 NMic=      0 NMicF=      0 NTot=      1.
+                    Isotopes and Nuclear Properties:
+ (Nuclear quadrupole moments (NQMom) in fm**2, nuclear magnetic moments (NMagM)
+  in nuclear magnetons)
+
+  Atom         1
+ IAtWgt=           7
+ AtmWgt=   7.0160045
+ NucSpn=           3
+ AtZEff=   0.0000000
+ NQMom=   -4.0100000
+ NMagM=    3.2564240
+ Leave Link  101 at Sun Feb 19 17:47:04 2017, MaxMem=   33554432 cpu:       0.1
+ (Enter /opt/gaussian/g09/l202.exe)
+                          Input orientation:                          
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          3           0        0.000000    0.000000    0.000000
+ ---------------------------------------------------------------------
+ Stoichiometry    Li(2)
+ Framework group  OH[O(Li)]
+ Deg. of freedom     0
+ Full point group                 OH      NOp  48
+ Largest Abelian subgroup         D2H     NOp   8
+ Largest concise Abelian subgroup C1      NOp   1
+                         Standard orientation:                         
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          3           0        0.000000    0.000000    0.000000
+ ---------------------------------------------------------------------
+ Leave Link  202 at Sun Feb 19 17:47:04 2017, MaxMem=   33554432 cpu:       0.0
+ (Enter /opt/gaussian/g09/l301.exe)
+ General basis read from cards:  (5D, 7F)
+ Centers:   1
+ S 3 1.00
+     Exponent=  3.6838200000D+01 Coefficients=  6.9668600000D-02
+     Exponent=  5.4817200000D+00 Coefficients=  3.8134600000D-01
+     Exponent=  1.1132700000D+00 Coefficients=  6.8170200000D-01
+ S 2 1.00
+     Exponent=  5.4020500000D-01 Coefficients= -2.6312700000D-01
+     Exponent=  1.0225500000D-01 Coefficients=  1.1433900000D+00
+ S 1 1.00
+     Exponent=  2.8565000000D-02 Coefficients=  1.0000000000D+00
+ ****
+ There are     3 symmetry adapted basis functions of AG  symmetry.
+ There are     0 symmetry adapted basis functions of B1G symmetry.
+ There are     0 symmetry adapted basis functions of B2G symmetry.
+ There are     0 symmetry adapted basis functions of B3G symmetry.
+ There are     0 symmetry adapted basis functions of AU  symmetry.
+ There are     0 symmetry adapted basis functions of B1U symmetry.
+ There are     0 symmetry adapted basis functions of B2U symmetry.
+ There are     0 symmetry adapted basis functions of B3U symmetry.
+ Integral buffers will be    131072 words long.
+ Regular integral format.
+ Two-electron integral symmetry is turned off.
+     3 basis functions,     6 primitive gaussians,     3 cartesian basis functions
+     2 alpha electrons        1 beta electrons
+       nuclear repulsion energy         0.0000000000 Hartrees.
+ IExCor=    0 DFT=F Ex=HF Corr=None ExCW=0 ScaHFX=  1.000000
+ ScaDFX=  1.000000  1.000000  1.000000  1.000000 ScalE2=  1.000000  1.000000
+ IRadAn=      0 IRanWt=     -1 IRanGd=            0 ICorTp=0
+ NAtoms=    1 NActive=    1 NUniq=    1 SFac= 7.50D-01 NAtFMM=   80 NAOKFM=F Big=F
+ Leave Link  301 at Sun Feb 19 17:47:04 2017, MaxMem=   33554432 cpu:       0.1
+ (Enter /opt/gaussian/g09/l302.exe)
+ NPDir=0 NMtPBC=     1 NCelOv=     1 NCel=       1 NClECP=     1 NCelD=      1
+         NCelK=      1 NCelE2=     1 NClLst=     1 CellRange=     0.0.
+ One-electron integrals computed using PRISM.
+ The smallest eigenvalue of the overlap matrix is  2.163D-01
+ NBasis=     3 RedAO= F  NBF=     3     0     0     0     0     0     0     0
+ NBsUse=     3 1.00D-04 NBFU=     3     0     0     0     0     0     0     0
+ Leave Link  302 at Sun Feb 19 17:47:04 2017, MaxMem=   33554432 cpu:       0.1
+ (Enter /opt/gaussian/g09/l303.exe)
+ DipDrv:  MaxL=1.
+ Leave Link  303 at Sun Feb 19 17:47:04 2017, MaxMem=   33554432 cpu:       0.1
+ (Enter /opt/gaussian/g09/l401.exe)
+ Harris functional with IExCor=  205 diagonalized for initial guess.
+ ExpMin= 2.86D-02 ExpMax= 3.68D+01 ExpMxC= 3.68D+01 IAcc=3 IRadAn=         0 AccDes= 0.00D+00
+ HarFok:  IExCor=  205 AccDes= 0.00D+00 IRadAn=         0 IDoV= 1
+ ScaDFX=  1.000000  1.000000  1.000000  1.000000
+ FoFCou: FMM=F IPFlag=           0 FMFlag=      100000 FMFlg1=           0
+         NFxFlg=           0 DoJE=T BraDBF=F KetDBF=T FulRan=T
+         Omega=  0.000000  0.000000  1.000000  0.000000  0.000000 ICntrl=     500 IOpCl=  0
+         NMat0=    1 NMatS0=    1 NMatT0=    0 NMatD0=    1 NMtDS0=    0 NMtDT0=    0
+         I1Cent=           4 NGrid=           0.
+ Petite list used in FoFCou.
+ Harris En= -7.33482536574754    
+ Initial guess orbital symmetries:
+       Occupied  (A1G) (A1G)
+       Virtual   (A1G)
+ The electronic state of the initial guess is 2-A1G.
+ Leave Link  401 at Sun Feb 19 17:47:04 2017, MaxMem=   33554432 cpu:       0.1
+ (Enter /opt/gaussian/g09/l405.exe)
+          Truncation Level=               99999
+          a=  1          b=  1          c=  1
+          a=N/2 - s   b=2s   c=n- (a+b)
+          no. active orbitals (n)  3
+          no. active ELECTRONS (N)=  3
+          SLATER DETERMINANT BASIS
+                                                  IRREPS TO BE RETAINED = 1 2 3 4 5 6 7 8
+                                                  GROUP IRREP. MULT. TABLE
+                                                      1    2    3    4    5    6    7    8
+                                                      2    1    4    3    6    5    8    7
+                                                      3    4    1    2    7    8    5    6
+                                                      4    3    2    1    8    7    6    5
+                                                      5    6    7    8    1    2    3    4
+                                                      6    5    8    7    2    1    4    3
+                                                      7    8    5    6    3    4    1    2
+                                                      8    7    6    5    4    3    2    1
+                                                  IRREP. LABELS FOR ORBITALS
+                                                   1 1 1
+          BOTTOM WEIGHT=  4     TOP WEIGHT=  8
+          Configuration         1 Symmetry 1 1a0
+          Configuration         2 Symmetry 1 10a
+          Configuration         3 Symmetry 1 a10
+          Configuration         4 Symmetry 1 baa
+          Configuration         5 Symmetry 1 aba
+          Configuration         6 Symmetry 1 aab
+          Configuration         7 Symmetry 1 01a
+          Configuration         8 Symmetry 1 a01
+          Configuration         9 Symmetry 1 0a1
+          NO OF BASIS FUNCTIONS =         9 NO TO BE DELETED =    0
+ CI Matrix Elements calculated here
+          NO. OF CONFIGURATIONS IN REFERENCE SPACE =    1
+                                   SECONDARY SPACE =    9
+                                   TERTIARY SPACE =    9
+          NO. OF ORBITALS =    3
+          NO. OF ELECTRONS =    3
+          NO. OF WEIGHTS =    5
+          REFERENCE STATE CONFIGURATIONS ARE:     0
+          NO. OF CORE ORBITALS =    0
+          OPTION:  NON-DIAGONAL HOLE LINE INTERACTIONS INCLUDED
+ Len28=         701 LenMCI=         363.
+ Leave Link  405 at Sun Feb 19 17:47:05 2017, MaxMem=   33554432 cpu:       0.2
+ (Enter /opt/gaussian/g09/l510.exe)
+ Enter MCSCF program.
+ NO. OF ORBITALS =  3     NO. OF CORE-ORBITALS =  0
+ NO. OF VALENCE-ORBITALS =  3      NO. OF VIRTUAL-ORBITALS =  0
+ USED ACCURACY IN CHECKING CONVERGENCE =  1.00D-08
+  Memory needed for Incore Integrals:                  262165
+  Integrals KEPT IN MEMORY
+ IBUJAK length=                      84
+ Integral file not found: evaluate integrals 
+ Symmetry not used in FoFDir.
+ MinBra= 0 MaxBra= 0 Meth= 1.
+ IRaf=       0 NMat=   1 IRICut=       1 DoRegI=T DoRafI=F ISym2E= 0 JSym2E=0.
+ Defining IBUGAM
+ 2ND ORD PT ENERGY     CV    0.000000   CU    0.000000   UV    0.000000
+ TOTAL                      -1.283387
+ WARNING! : large rotation  I  J  =                        3
+                        2
+ Step scaled by    0.8274332974643291     
+ ITN=  1 MaxIt= 64 E=     -1.2833866187 DE=-1.28D+00 Acc= 1.00D-08 Lan=  0
+ ITN=  2 MaxIt= 64 E=     -1.2833866187 DE=-6.66D-16 Acc= 1.00D-08 Lan=  0
+ ... Do an extra-iteration for final printing.
+
+
+                    EIGENVALUES AND  EIGENVECTORS OF CI MATRIX
+
+
+
+   ( 1)     EIGENVALUE      -7.3815816728
+ (    1) 0.8943621 (    2)-0.4431413 (    3) 0.0456970 (    4)-0.0324706 (    5)-0.0208903 (    6) 0.0115803 (    8)-0.0051557
+ (    7) 0.0015679 (    9) 0.0003907 (
+
+
+   ( 2)     EIGENVALUE      -7.1837850481
+ (    2) 0.8937509 (    1) 0.4439990 (    5) 0.0438264 (    4) 0.0377243 (    3) 0.0238814 (    8) 0.0109080 (    6) 0.0061021
+ (    7)-0.0018944 (    9)-0.0004490 (
+
+
+   ( 3)     EIGENVALUE      -5.2500168553
+ (    3) 0.9470158 (    6)-0.2408041 (    5)-0.2042059 (    1)-0.0451308 (    4) 0.0365981 (    2) 0.0071442 (    8) 0.0068658
+ (    9)-0.0001676 (    7)-0.0000983 (
+
+
+   ( 4)     EIGENVALUE      -5.0485277125
+ (    5)-0.5773503 (    6) 0.5773503 (    4) 0.5773503 (    2) 0.0000000 (    3) 0.0000000 (    8) 0.0000000 (    1) 0.0000000
+ (    7) 0.0000000 (    9) 0.0000000 (
+
+
+   ( 5)     EIGENVALUE      -5.0245527884
+ (    4) 0.7209954 (    6)-0.6631674 (    3)-0.1827314 (    5) 0.0578280 (    8) 0.0385779 (    2)-0.0377311 (    1) 0.0269781
+ (    7)-0.0001559 (    9)-0.0001214 (
+
+
+   ( 6)     EIGENVALUE      -4.9972007021
+ (    5) 0.7806548 (    6) 0.4029990 (    4) 0.3776558 (    3) 0.2568657 (    8)-0.1277509 (    2)-0.0551062 (    1)-0.0144367
+ (    7)-0.0006252 (    9) 0.0003107 (
+
+
+   ( 7)     EIGENVALUE      -4.7152718226
+ (    8) 0.9909578 (    5) 0.0992121 (    6) 0.0794320 (    3) 0.0336414 (    4) 0.0197801 (    2)-0.0178285 (    1)-0.0028328
+ (    9)-0.0011508 (    7) 0.0001222 (
+
+
+   ( 8)     EIGENVALUE      -1.6693845311
+ (    7) 0.9999955 (    2) 0.0023513 (    9) 0.0015604 (    5) 0.0005805 (    1)-0.0005704 (    4) 0.0004721 (    3) 0.0001949
+ (    8)-0.0001637 (    6) 0.0001084 (
+
+
+   ( 9)     EIGENVALUE      -1.2833866187
+ (    9) 0.9999979 (    7)-0.0015616 (    8) 0.0011931 (    2) 0.0005639 (    6)-0.0001566 (    1)-0.0001522 (    5)-0.0001286
+ (    3) 0.0000880 (    4) 0.0000280 (
+ Final one electron symbolic density matrix:
+                1             2             3 
+      1  0.215558D-05
+      2  0.238642D-02  0.100000D+01
+      3  0.370997D-03 -0.312404D-02  0.200000D+01
+ MCSCF converged.
+ Leave Link  510 at Sun Feb 19 17:47:05 2017, MaxMem=   33554432 cpu:       0.2
+ (Enter /opt/gaussian/g09/l601.exe)
+ Copying SCF densities to generalized density rwf, IOpCl= 0 IROHF=3.
+
+ **********************************************************************
+
+            Population analysis using the SCF density.
+
+ **********************************************************************
+
+ Orbital symmetries:
+       Occupied  (A1G) (A1G)
+       Virtual   (A1G)
+ The electronic state is 2-A1G.
+ Alpha  occ. eigenvalues --    0.00000   0.00000
+ Alpha virt. eigenvalues --    0.00000
+     Molecular Orbital Coefficients:
+                           1         2         3
+                       (A1G)--O  (A1G)--O  (A1G)--V
+     Eigenvalues --     0.00000   0.00000   0.00000
+   1 1   Li 1S          1.00080  -0.17558   0.00347
+   2        2S         -0.00139   1.03544   1.24145
+   3        3S         -0.00401  -0.02491  -1.60678
+     Density Matrix:
+                           1         2         3
+   1 1   Li 1S          0.03044
+   2        2S         -0.17139   4.15051
+   3        3S         -0.00753  -4.01261   5.16396
+    Full Mulliken population analysis:
+                           1         2         3
+   1 1   Li 1S          0.03044
+   2        2S         -0.03037   4.15051
+   3        3S         -0.00106  -3.14102   5.16396
+     Gross orbital populations:
+                           1
+   1 1   Li 1S         -0.00100
+   2        2S          0.97912
+   3        3S          2.02188
+          Condensed to atoms (all electrons):
+              1
+     1  Li   3.000000
+ Mulliken atomic charges:
+              1
+     1  Li   0.000000
+ Sum of Mulliken atomic charges =   0.00000
+ Mulliken charges with hydrogens summed into heavy atoms:
+              1
+     1  Li   0.000000
+ Sum of Mulliken charges with hydrogens summed into heavy atoms =   0.00000
+ Electronic spatial extent (au):  <R**2>=             94.6421
+ Charge=              0.0000 electrons
+ Dipole moment (field-independent basis, Debye):
+    X=              0.0000    Y=              0.0000    Z=              0.0000  Tot=              0.0000
+ Quadrupole moment (field-independent basis, Debye-Ang):
+   XX=            -42.4323   YY=            -42.4323   ZZ=            -42.4323
+   XY=              0.0000   XZ=              0.0000   YZ=              0.0000
+ Traceless Quadrupole moment (field-independent basis, Debye-Ang):
+   XX=              0.0000   YY=              0.0000   ZZ=              0.0000
+   XY=              0.0000   XZ=              0.0000   YZ=              0.0000
+ Octapole moment (field-independent basis, Debye-Ang**2):
+  XXX=              0.0000  YYY=              0.0000  ZZZ=              0.0000  XYY=              0.0000
+  XXY=              0.0000  XXZ=              0.0000  XZZ=              0.0000  YZZ=              0.0000
+  YYZ=              0.0000  XYZ=              0.0000
+ Hexadecapole moment (field-independent basis, Debye-Ang**3):
+ XXXX=           -369.3522 YYYY=           -369.3522 ZZZZ=           -369.3522 XXXY=              0.0000
+ XXXZ=              0.0000 YYYX=              0.0000 YYYZ=              0.0000 ZZZX=              0.0000
+ ZZZY=              0.0000 XXYY=           -123.1174 XXZZ=           -123.1174 YYZZ=           -123.1174
+ XXYZ=              0.0000 YYXZ=              0.0000 ZZXY=              0.0000
+ N-N= 0.000000000000D+00 E-N=-2.394371221832D+00  KE= 6.287533411658D-01
+ Orbital energies and kinetic energies (alpha):
+                                 1                 2
+   1         (A1G)--O          0.000000          3.661013
+   2         (A1G)--O          0.000000          0.330429
+   3         (A1G)--V          0.000000          0.150360
+ Total kinetic energy from orbitals= 7.982883378919D+00
+ No NMR shielding tensors so no spin-rotation constants.
+ Leave Link  601 at Sun Feb 19 17:47:05 2017, MaxMem=   33554432 cpu:       0.1
+ (Enter /opt/gaussian/g09/l9999.exe)
+
+ Test job not archived.
+ 1\1\GINC-DISCOVERY\SP\CASSCF\Gen\Li1(2)\JDW\19-Feb-2017\0\\#P CASSCF(3
+ ,3,nroot=9)/GEN IOp(3/60=-1) POP=full\\Li integral tests\\0,2\Li,0,0.,
+ 0.,0.\\Version=AM64L-G09RevA.02\State=2-A1G\HF=-1.2833866\RMSD=0.000e+
+ 00\Dipole=0.,0.,0.\Quadrupole=0.,0.,0.,0.,0.,0.\PG=OH [O(Li1)]\\@
+
+
+ SLITHERY-DITHERY
+ FRIEDRICH A. KEKULE
+ DREAMT ON A BUS OF THINGS
+ FREUD WOULD THINK KEEN.
+ MOST OF THE TIME THEY WERE
+ HERPETOLOGICAL
+ BITING THEIR TAILS IN THE
+ SHAPE OF BENZENE.
+ Job cpu time:  0 days  0 hours  0 minutes  1.3 seconds.
+ File lengths (MBytes):  RWF=     42 Int=      0 D2E=      0 Chk=      1 Scr=      1
+ Normal termination of Gaussian 09 at Sun Feb 19 17:47:05 2017.

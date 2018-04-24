@@ -44,18 +44,18 @@ j=((i-1)*6)
 j=j+1
 p11(j,1) = 2; p11(j,2)= aa(i,1);p11(j,3)= aa(i,2);p11(j,4)=aa(i,3)
 j=j+1
-p11(j,1) =-2; p11(j,2)= aa(i,2);p11(j,3)= aa(i,1);p11(j,4)=aa(i,3)
+p11(j,1) = -2; p11(j,2)= aa(i,2);p11(j,3)= aa(i,1);p11(j,4)=aa(i,3)
 j=j+1
 p11(j,1) = 1; p11(j,2)= aa(i,3);p11(j,3)= aa(i,2);p11(j,4)=aa(i,1)
 j=j+1
 p11(j,1) = 1; p11(j,2)= aa(i,1);p11(j,3)= aa(i,3);p11(j,4)=aa(i,2)
 j=j+1
-p11(j,1) = -1; p11(j,2)= aa(i,3);p11(j,3)= aa(i,1);p11(j,4)=aa(i,2)
+p11(j,1) =-1; p11(j,2)= aa(i,3);p11(j,3)= aa(i,1);p11(j,4)=aa(i,2)
 j=j+1
-p11(j,1) = -1;p11(j,2)= aa(i,2);p11(j,3)= aa(i,3);p11(j,4)=aa(i,1)
+p11(j,1) =-1;p11(j,2)= aa(i,2);p11(j,3)= aa(i,3);p11(j,4)=aa(i,1)
 end do
 
-!do i=1,6
+!do i=1,48
 !write(6,*) p11(i,:)
 !end do
 
@@ -64,9 +64,9 @@ end do
 do i=1,n_weyl
 j=((i-1)*4)
 j=j+1
-p12(j,1) =1; p12(j,2)= aa(i,3);p12(j,3)= aa(i,2);p12(j,4)=aa(i,1)
+p12(j,1) = 1; p12(j,2)= aa(i,3);p12(j,3)= aa(i,2);p12(j,4)=aa(i,1)
 j=j+1
-p12(j,1) =1; p12(j,2)= aa(i,1);p12(j,3)= aa(i,3);p12(j,4)=aa(i,2)
+p12(j,1) = 1; p12(j,2)= aa(i,1);p12(j,3)= aa(i,3);p12(j,4)=aa(i,2)
 j=j+1
 p12(j,1) =-1; p12(j,2)= aa(i,3);p12(j,3)= aa(i,1);p12(j,4)=aa(i,2)
 j=j+1
@@ -74,7 +74,8 @@ p12(j,1) =-1; p12(j,2)= aa(i,2);p12(j,3)= aa(i,3);p12(j,4)=aa(i,1)
 
 end do
 
-!do i=1,4
+!write (6,*) "Next"
+!do i=1,32
 !write(6,*) p12(i,:)
 !end do
 
@@ -200,9 +201,21 @@ do i=1,n_weyl
       if(abs(H_f(i,j)).lt.1.D-8) then
        H_f(i,j)=0.d0
       end if
+      
+       if (i.ge.7) then
+         H_f(i,j)=H_f(i,j)/sqrt(1.5d0)
+       end if
+  
+       if (j.ge.7) then
+         H_f(i,j)=H_f(i,j)/sqrt(1.5d0)
+       end if
+
+
 !      write(6,*) H_f(i,j)
     end do
 end do
+
+
 
 do i=1,n_weyl
 ! write(23,10)H_f(i,:)
@@ -217,7 +230,7 @@ call DSYEV( 'V', 'U', n_weyl, H_f, n_weyl, W_f, WORK_f, LWORK_f, INFO )
  write(6,*) "Spectrum for Sz=1/2"
 do i=1,n_weyl
  write(6,10)W_f(i)+E_nuc
-10 format(8f13.8)
+10 format(9f13.8)
 enddo
 
 
@@ -251,7 +264,7 @@ aa2=a2(:,2:4)   ! storing the components of phi_12(j)
  do i=1,6
   do k=1,6
   call norm1(aa1(i,:),aa1(k,:),nm,S,H,EE,n_bas)
-  norm_aa1=norm_aa1+a1(i,1)*a1(k,1)*nm/4.d0
+  norm_aa1=norm_aa1+a1(i,1)*a1(k,1)*nm
   end do
  end do
 
@@ -260,7 +273,7 @@ aa2=a2(:,2:4)   ! storing the components of phi_12(j)
  do i=1,6
   do k=1,6
    call norm1(aa2(i,:),aa2(k,:),nm,S,H,EE,n_bas)
-   norm_aa2=norm_aa2+a2(i,1)*a2(k,1)*nm/4.d0
+   norm_aa2=norm_aa2+a2(i,1)*a2(k,1)*nm
   end do
  end do
 
@@ -270,7 +283,7 @@ val1=0
  do i=1,6
    do j=1,6
        call ham(aa1(i,:),aa2(j,:),v,S,H,EE,n_bas)
-       val1=val1+a1(i,1)*a2(j,1)*v/4.d0
+       val1=val1+a1(i,1)*a2(j,1)*v
    end do
  end do
 
@@ -288,7 +301,7 @@ bb2=b2(:,2:4);    ! storing the components of phi_12(j)
  do i=1,4
   do k=1,4
    call norm1(bb1(i,:),bb1(k,:),nm,S,H,EE,n_bas)
-   norm_bb1=norm_bb1+b1(i,1)*b1(k,1)*nm*3.d0/4.d0
+   norm_bb1=norm_bb1+b1(i,1)*b1(k,1)*nm
   end do 
  end do 
 
@@ -297,7 +310,7 @@ bb2=b2(:,2:4);    ! storing the components of phi_12(j)
  do i=1,4
   do k=1,4
   call norm1(bb2(i,:),bb2(k,:),nm,S,H,EE,n_bas)
-  norm_bb2=norm_bb2+b2(i,1)*b2(k,1)*nm*3.d0/4.d0
+  norm_bb2=norm_bb2+b2(i,1)*b2(k,1)*nm
   end do
  end do
 
@@ -307,7 +320,7 @@ val2=0;
   do i=1,4
    do j=1,4
        call ham(bb1(i,:),bb2(j,:),v,S,H,EE,n_bas)
-       val2=val2+b1(i,1)*b2(j,1)*v*3.d0/4.d0
+       val2=val2+b1(i,1)*b2(j,1)*v
    end do
  end do
 
@@ -317,7 +330,9 @@ val2=0;
 !1. This assuming the alpha1 and alpha2 are already orthonormal and normalizing it with norms
 !   of individual part
 !
-   val= (val1+val2)/(sqrt((norm_aa1+norm_bb1))*sqrt((norm_aa2+norm_bb2)))
+   val= (val1/4.d0+val2*3.d0/4.d0)/(sqrt((norm_aa1/4.d0+norm_bb1*3.d0/4.d0))*sqrt((norm_aa2/4.d0+norm_bb2*3.d0/4.d0)))
+!   write (6,*) (sqrt((norm_aa1+norm_bb1))*sqrt((norm_aa2+norm_bb2)))
+!    write (6,*) norm_aa1,norm_bb1,norm_aa2,norm_bb2
 
 !2. This assuming the alpha1 and alpha2 are already orthonormal and using the direct expression
 !   the book by Ruben Paunz
@@ -330,7 +345,7 @@ val2=0;
 !   alpha2= [2*alpha*alpha*beta - beta*lpha*alpha - alpha*beta*alpha ]
 !   <alpha1|alpha1> = 6 ; <alpha2|alpha2>=6
 !
-!  val= (val1*6.d0+val2*3.d0)/(sqrt((norm_aa1*6.d0+norm_bb1*3.d0))*sqrt((norm_aa2*6.d0+norm_bb2*3.d0)))
+!  val= (val1*6.d0+val2*6.d0)/(sqrt((norm_aa1*6.d0+norm_bb1*6.d0))*sqrt((norm_aa2*6.d0+norm_bb2*6.d0)))
 end subroutine one_element 
 
 
@@ -359,3 +374,5 @@ real*8 nm
 nm=S(a(1),p(1))*S(a(2),p(2))*S(a(3),p(3));
 
 end subroutine norm1
+
+

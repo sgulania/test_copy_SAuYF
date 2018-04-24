@@ -24,7 +24,7 @@ allocate ( aa(n_weyl,3), STAT = AllocateStatus)
 allocate ( W_f(n_weyl),WORK_f(3*n_weyl-1),H_f(n_weyl,n_weyl), STAT = AllocateStatus)
    IF (AllocateStatus /= 0) STOP "*** Not enough memory ***"
 
-allocate (p11(n_weyl*6,4),p12(n_weyl*4,4), STAT = AllocateStatus)
+allocate (p11(46,4),p12(34,4), STAT = AllocateStatus)
    IF (AllocateStatus /= 0) STOP "*** Not enough memory ***"
 
  do i = 1, n_weyl
@@ -39,7 +39,7 @@ allocate (p11(n_weyl*6,4),p12(n_weyl*4,4), STAT = AllocateStatus)
 
 !------------------------------------------------------------------
 ! Generating all the phi_11
-do i=1,n_weyl
+do i=1,n_weyl-1
 j=((i-1)*6)
 j=j+1
 p11(j,1) = 2; p11(j,2)= aa(i,1);p11(j,3)= aa(i,2);p11(j,4)=aa(i,3)
@@ -50,9 +50,9 @@ p11(j,1) = 1; p11(j,2)= aa(i,3);p11(j,3)= aa(i,2);p11(j,4)=aa(i,1)
 j=j+1
 p11(j,1) = 1; p11(j,2)= aa(i,1);p11(j,3)= aa(i,3);p11(j,4)=aa(i,2)
 j=j+1
-p11(j,1) = -1; p11(j,2)= aa(i,3);p11(j,3)= aa(i,1);p11(j,4)=aa(i,2)
+p11(j,1) =-1; p11(j,2)= aa(i,3);p11(j,3)= aa(i,1);p11(j,4)=aa(i,2)
 j=j+1
-p11(j,1) = -1;p11(j,2)= aa(i,2);p11(j,3)= aa(i,3);p11(j,4)=aa(i,1)
+p11(j,1) =-1;p11(j,2)= aa(i,2);p11(j,3)= aa(i,3);p11(j,4)=aa(i,1)
 end do
 
 !do i=1,6
@@ -61,22 +61,64 @@ end do
 
 !-----------------------------------------------------------------
 ! Generating phi_12
-do i=1,n_weyl
+do i=1,n_weyl-1
 j=((i-1)*4)
 j=j+1
-p12(j,1) =1; p12(j,2)= aa(i,3);p12(j,3)= aa(i,2);p12(j,4)=aa(i,1)
+p12(j,1) = 1; p12(j,2)= aa(i,3);p12(j,3)= aa(i,2);p12(j,4)=aa(i,1)
 j=j+1
-p12(j,1) =1; p12(j,2)= aa(i,1);p12(j,3)= aa(i,3);p12(j,4)=aa(i,2)
+p12(j,1) =-1; p12(j,2)= aa(i,1);p12(j,3)= aa(i,3);p12(j,4)=aa(i,2)
+j=j+1
+p12(j,1) =-1; p12(j,2)= aa(i,3);p12(j,3)= aa(i,1);p12(j,4)=aa(i,2)
+j=j+1
+p12(j,1) = 1; p12(j,2)= aa(i,2);p12(j,3)= aa(i,3);p12(j,4)=aa(i,1)
+
+end do
+
+
+!------------------------------------------------------------------
+! Generating all the phi_11
+do i=8,n_weyl
+j=42
+j=j+1
+p11(j,1) =  1; p11(j,2)= aa(i,3);p11(j,3)= aa(i,2);p11(j,4)=aa(i,1)
+j=j+1
+p11(j,1) = -1; p11(j,2)= aa(i,1);p11(j,3)= aa(i,3);p11(j,4)=aa(i,2)
+j=j+1
+p11(j,1) =  1; p11(j,2)= aa(i,3);p11(j,3)= aa(i,1);p11(j,4)=aa(i,2)
+j=j+1
+p11(j,1) = -1; p11(j,2)= aa(i,2);p11(j,3)= aa(i,3);p11(j,4)=aa(i,1)
+end do
+
+!do i=1,6
+!write(6,*) p11(i,:)
+!end do
+
+!-----------------------------------------------------------------
+! Generating phi_12
+do i=8,n_weyl
+j=28
+j=j+1
+p12(j,1) = 2; p12(j,2)= aa(i,1);p12(j,3)= aa(i,2);p12(j,4)=aa(i,3)
+j=j+1
+p12(j,1) = 2; p12(j,2)= aa(i,2);p12(j,3)= aa(i,1);p12(j,4)=aa(i,3)
+j=j+1
+p12(j,1) =-1; p12(j,2)= aa(i,3);p12(j,3)= aa(i,2);p12(j,4)=aa(i,1)
+j=j+1
+p12(j,1) =-1; p12(j,2)= aa(i,1);p12(j,3)= aa(i,3);p12(j,4)=aa(i,2)
 j=j+1
 p12(j,1) =-1; p12(j,2)= aa(i,3);p12(j,3)= aa(i,1);p12(j,4)=aa(i,2)
 j=j+1
 p12(j,1) =-1; p12(j,2)= aa(i,2);p12(j,3)= aa(i,3);p12(j,4)=aa(i,1)
-
 end do
 
-!do i=1,4
-!write(6,*) p12(i,:)
-!end do
+
+do i=1,46
+write(6,*) p11(i,:)
+end do
+
+do i=1,34
+write(6,*) p12(i,:)
+end do
 
 !----------------------------------------------------------------------
 ! loading the integrals - Overlap , Core Hamiltonian, Nuclear repulsion
@@ -190,8 +232,9 @@ do i=1,n_bas
 !--------------------------------------------------------------------------------
 ! computing the Hessian matrix
 
-do i=1,n_weyl
-    do j=1,n_weyl
+do i=1,n_weyl-1
+    do j=1,n_weyl-1
+      write(6,*) i,j
        call one_element(p11(6*(i-1)+1:6*(i-1)+6,:),p12(4*(i-1)+1:4*(i-1)+4,:), &
                         p11(6*(j-1)+1:6*(j-1)+6,:),p12(4*(j-1)+1:4*(j-1)+4,:),val,S,H,EE,n_bas)
 
@@ -200,12 +243,45 @@ do i=1,n_weyl
       if(abs(H_f(i,j)).lt.1.D-8) then
        H_f(i,j)=0.d0
       end if
-!      write(6,*) H_f(i,j)
     end do
 end do
 
+
+do i=1,n_weyl-1
+    do j=8,n_weyl
+      write(6,*) i,j
+       call one_element1(p11(6*(i-1)+1:6*(i-1)+6,:),p12(4*(i-1)+1:4*(i-1)+4,:), &
+                        p11(42+1:42+4,:),p12(28+1:28+6,:),val,S,H,EE,n_bas)
+
+      H_f(i,j)=val
+      H_f(j,i)= H_f(i,j)
+
+      if(abs(H_f(i,j)).lt.1.D-8) then
+       H_f(i,j)=0.d0
+      end if
+    end do
+end do
+
+
+do i=8,n_weyl
+    do j=8,n_weyl
+      write(6,*) i,j
+       call one_element2(p12(28+1:28+6,:),p11(42+1:42+4,:), &
+                        p12(28+1:28+6,:),p11(42+1:42+4,:),val,S,H,EE,n_bas)
+
+      H_f(i,j)=val
+      
+      if(abs(H_f(i,j)).lt.1.D-8) then
+       H_f(i,j)=0.d0
+      end if
+    end do
+end do
+
+
+
+
 do i=1,n_weyl
-! write(23,10)H_f(i,:)
+ write(23,10)H_f(i,:)
 enddo 
 
 !--------------------------------------------------------------------------------
@@ -217,7 +293,7 @@ call DSYEV( 'V', 'U', n_weyl, H_f, n_weyl, W_f, WORK_f, LWORK_f, INFO )
  write(6,*) "Spectrum for Sz=1/2"
 do i=1,n_weyl
  write(6,10)W_f(i)+E_nuc
-10 format(8f13.8)
+10 format(9f13.8)
 enddo
 
 
@@ -230,7 +306,7 @@ integer a1(6,4),a2(6,4),b1(4,4),b2(4,4)
 integer aa1(6,3),aa2(6,3),bb1(4,3),bb2(4,3)
 real*8 v,val,val1,val2,nm,norm_aa1,norm_aa2,norm_bb1,norm_bb2
 real*8  S(n_bas,n_bas),H(n_bas,n_bas),EE(n_bas,n_bas,n_bas,n_bas)
-
+real*8 over
 !--------------------------------------------------------------------------------
 ! This subroutines compute 
 !  part <PHI(i)|H|PHI(j)>  where 
@@ -311,6 +387,24 @@ val2=0;
    end do
  end do
 
+ over=0.d0
+ ! Computing overlap between psi_i and psi_j
+    do i=1,6
+      do k=1,6
+         call norm1(aa1(i,:),aa2(k,:),nm,S,H,EE,n_bas)
+         over=over+a1(i,1)*a2(k,1)*nm/4.d0
+      end do
+    end do
+     write(6,*) over
+     over = 0.d0
+
+    do i=1,4
+      do k=1,4
+         call norm1(bb1(i,:),bb2(k,:),nm,S,H,EE,n_bas)
+         over=over+b1(i,1)*b2(k,1)*nm*3.d0/4.d0
+      end do
+    end do
+    write(6,*) over
 
 ! This is more crucial step 
 !
