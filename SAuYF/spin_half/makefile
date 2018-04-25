@@ -1,1 +1,0 @@
-gfortran main.f90 variables.f90 read.f90 orthogonal.f90 young_frame_S3.f90 one_element.f90 ham.f90 norm1.f90 hamiltonian.f90 /usr/lib/liblapack.dylib
