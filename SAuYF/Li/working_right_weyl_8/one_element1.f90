@@ -34,7 +34,7 @@ aa2=a2(:,2:4)   ! storing the components of phi_12(j)
  do i=1,4
   do k=1,4
    call norm1(aa2(i,:),aa2(k,:),nm,S,H,EE,n_bas)
-   norm_aa2=norm_aa2+a2(i,1)*a2(k,1)*nm*9.d0/4.d0
+   norm_aa2=norm_aa2+a2(i,1)*a2(k,1)*nm*3.d0/4.d0
   end do
  end do
 
@@ -44,7 +44,7 @@ val1=0
  do i=1,6
    do j=1,4
        call ham(aa1(i,:),aa2(j,:),v,S,H,EE,n_bas)
-       val1=val1+a1(i,1)*a2(j,1)*v*3.d0/4.d0
+       val1=val1+a1(i,1)*a2(j,1)*v*sqrt(3.d0)/4.d0
    end do
  end do
 
@@ -71,7 +71,7 @@ bb2=b2(:,2:4);    ! storing the components of phi_12(j)
  do i=1,6
   do k=1,6
   call norm1(bb2(i,:),bb2(k,:),nm,S,H,EE,n_bas)
-  norm_bb2=norm_bb2+b2(i,1)*b2(k,1)*nm*3.d0/4.d0
+  norm_bb2=norm_bb2+b2(i,1)*b2(k,1)*nm/4.d0
   end do
  end do
 
@@ -81,7 +81,7 @@ val2=0;
   do i=1,4
    do j=1,6
        call ham(bb1(i,:),bb2(j,:),v,S,H,EE,n_bas)
-       val2=val2+b1(i,1)*b2(j,1)*v*3.d0/4.d0
+       val2=val2+b1(i,1)*b2(j,1)*v*sqrt(3.d0)/4.d0
    end do
  end do
 
