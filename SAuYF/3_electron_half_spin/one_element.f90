@@ -105,7 +105,7 @@ val2=0;
 !         write(6,*) cp1(i)
 !         write(6,*) cs1(k)
          over=over+cp1(i)*cs1(k)*nm
-!         write(6,*) over         
+!         write(6,*) cp1(i)*cs1(k)*nm 
       end do
     end do
 !     write(6,*) over
@@ -119,10 +119,12 @@ val2=0;
 !         write(6,*) cp2(i)
 !         write(6,*) cs2(k)
          over=over+cp2(i)*cs2(k)*nm
-!         write(6,*) over
+!        write(6,*) cp2(i)*cs2(k)*nm
       end do
     end do
 
+
+!         write(6,*) over
 ! This is more crucial step 
 !
 !1. This assuming the alpha1 and alpha2 are already orthonormal and normalizing it with norms

@@ -26,7 +26,7 @@ real*8 val
 do i=1,n_weyl
     do j=1,n_weyl
 
- !      write(6,*) i,j
+!       write(6,*) i,j
        i11  = list_p11(i)+1
        i11n = list_p11(i+1)
 
